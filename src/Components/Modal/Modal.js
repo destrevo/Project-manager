@@ -4,7 +4,7 @@ import './Modal.css'
 import { useContext } from 'react'
 import { ProjectMaganer } from '../../Context/Context'
 import DataRenderInModal from '../dataRenderInModal/DataRenderInModal'
-import Form from '../From/Form'
+import Form from '../Form/Form'
 
 export default function Modal({ isActive }) {
     const { setModalOpen, setChosenCard, chosenCard } = useContext(ProjectMaganer)

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import First from "./FromPages/First";
-import Second from "./FromPages/Second";
-import Third from "./FromPages/Third";
+import First from "./FormPages/First";
+import Second from "./FormPages/Second";
+import Third from "./FormPages/Third";
 import { dataModel } from "./DataModel";
 import "./From.css"
 
