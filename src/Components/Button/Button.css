@@ -1,0 +1,22 @@
+.btn{
+    width: 100px;
+    height: 35px;
+    padding: 5px;
+    cursor: pointer;
+    margin: 10px;
+    background-color: rgb(255, 249, 249);
+    border-radius: 5px;
+    border: 0px ;
+    font-weight: 600;
+    font-family: monospace;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.2s ease-out;
+}
+.btn.denied{
+    pointer-events: none;
+    opacity: 0.2;
+}
+.btn:hover{
+    background-color: rgb(152, 216, 176);
+    transition: 0.2s ease-in;
+}

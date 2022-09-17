@@ -1,0 +1,21 @@
+.card{
+    display: flex;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    transition: 0.2s ease-in;
+}
+.card:hover{
+    transform: scale(1.05);
+    transition: 0.2s ease-out;
+}
+ .card > span {
+    padding:5px;
+    max-height: 80px;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+ }

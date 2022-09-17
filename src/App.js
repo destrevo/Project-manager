@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useContext, useState } from 'react';
+import { ProjectMaganer } from './Context/Context';
+import Main from './Components/Main/Main';
+
 
 function App() {
+  const [pending, setPending] = useState(false)
+  const { dataFromServer, setDataFromServer } = useContext(ProjectMaganer)
+  //onload [] empty dependency array
+  useEffect(() => {
+    getProjectData()
+    // eslint-disable-next-line
+  },[])
+
+  const getProjectData = async () => {
+    setPending(true)
+    const response = await fetch('/data.json')
+    const data = await response.json()
+    setTimeout(() => {
+      setDataFromServer(data)
+      setPending(false)
+    }, [2000])
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {pending && <div className="lds-dual-ring"/>}
+      {dataFromServer.length > 0 && <Main />}
     </div>
   );
 }
