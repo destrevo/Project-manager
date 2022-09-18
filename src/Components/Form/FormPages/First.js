@@ -8,7 +8,7 @@ export default function First({ formData, setFormData, page }) {
   const [validate, setValidate] = useState(false)
 
   useEffect(() => {
-    if (name.length > 0 && desc.length === 0) {
+    if (name.length > 0 && name.length < 255 && desc.length === 0) {
       setValidate(true)
     } else {
       if (desc.length >= 50 && desc.length <= 500) {
