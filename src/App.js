@@ -3,7 +3,6 @@ import { useEffect, useContext, useState } from 'react';
 import { ProjectMaganer } from './Context/Context';
 import Main from './Components/Main/Main';
 
-
 function App() {
   const [pending, setPending] = useState(false)
   const { dataFromServer, setDataFromServer } = useContext(ProjectMaganer)

@@ -1,3 +1,19 @@
+[]: # Title: Project Manager
+[]: # Description: A simple project manager app
+[]: # Version: 1.0.0
+
+The app entry point is index.js
+In app js there is a useEffect hook that fetches the data from the server
+The data is then passed to the Context which is reachable globally.
+In app js there is a main component that renders the data from the server by card component.
+The main.js contains a filter function (filterTunnel) that filters the data based on the user input and filter by 'card name'
+The main.js also contains the modal component that renders the project details details when the user clicks on the card.
+If you want to add a new card you can do it by clicking on the add button and filling the form.
+The From component will rendered in the modal component.
+The Third.js contains the multi step form last step , that will update the data in the context.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
