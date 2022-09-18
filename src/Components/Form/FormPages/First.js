@@ -11,7 +11,7 @@ export default function First({ formData, setFormData, page }) {
     if (name.length > 0 && name.length < 255 && desc.length === 0) {
       setValidate(true)
     } else {
-      if (desc.length >= 50 && desc.length <= 500) {
+      if (desc.length >= 50 && desc.length <= 500 && name.length > 0 && name.length < 255) {
         setValidate(true)
       } else {
         setValidate(false)
