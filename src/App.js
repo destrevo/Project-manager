@@ -8,19 +8,24 @@ function App() {
   const { dataFromServer, setDataFromServer } = useContext(ProjectMaganer)
   //onload [] empty dependency array
   useEffect(() => {
-    getProjectData()
-    // eslint-disable-next-line
+    let isMounted = true
+    if(isMounted) {
+      (async () => {
+        setPending(true)
+        const response = await fetch('/data.json')
+        const data = await response.json()
+        setTimeout(() => {
+          setDataFromServer(data)
+          setPending(false)
+        }, [2000])
+      })()
+    }
+    return () => {
+      isMounted = false
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-  const getProjectData = async () => {
-    setPending(true)
-    const response = await fetch('/data.json')
-    const data = await response.json()
-    setTimeout(() => {
-      setDataFromServer(data)
-      setPending(false)
-    }, [2000])
-  }
 
   return (
     <div className="App">
